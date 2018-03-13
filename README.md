@@ -1,3 +1,7 @@
+This is clone for personal testing and experimentation.
+
+Credit Below is Original Repository
+
 # Kegberry: Complete Beer Tap Monitoring for Raspberry Pi
 
 Kegberry turns your Raspberry Pi into an complete beer tap monitoring
