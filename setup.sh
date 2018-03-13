@@ -16,5 +16,5 @@ sudo bash -c "DEBIAN_FRONTEND=noninteractive apt-get -yq install python-setuptoo
 sudo easy_install pip
 sudo pip install -U virtualenv
 sudo pip install -U --pre kegberry
-sudo mv ~/Kegbot/app.py /usr/local/lib/python2.7/dist-packages/kegberry/app.py
+sudo mv /home/pi/Kegbot/app.py /usr/local/lib/python2.7/dist-packages/kegberry/app.py
 kegberry $INSTALLFLAGS install
