@@ -99,7 +99,7 @@ REQUIRED_PACKAGES = (
     'supervisor',
     'python-setuptools',
     'python-dev',
-    'libmysqlclient-dev',
+    'default-libmysqlclient-dev',
     'mysql-server',
     'redis-server',
 )
@@ -376,4 +376,3 @@ class KegberryApp(object):
     def restart(self, *args):
         logger.info('Restarting services ...')
         run_command('sudo supervisorctl restart kegbot:*')
-
