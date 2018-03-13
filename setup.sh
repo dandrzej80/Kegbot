@@ -14,7 +14,12 @@ set -e
 set -x
 sudo bash -c "DEBIAN_FRONTEND=noninteractive apt-get -yq install python-setuptools"
 sudo easy_install pip
+sudo pin install python3-xlib
+sudo apt-get install
+sudo apt-get install python3-tk
+sudo apt-get install python3-dev
 sudo pip install -U virtualenv
 sudo pip install -U --pre kegberry
-sudo mv /home/pi/Kegbot/app.py /usr/local/lib/python2.7/dist-packages/kegberry/app.py
+sudo cp /home/pi/Kegbot/app.py /usr/local/lib/python2.7/dist-packages/kegberry/app.py
+export INSTALLFLAGS="--nopycore --allow_root"
 kegberry $INSTALLFLAGS install

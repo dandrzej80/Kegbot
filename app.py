@@ -136,7 +136,7 @@ def run_command(cmd, fail_silently=False, call=False):
         if not fail_silently:
             print e.output
             print ''
-            logger.error('Command returned error:Test')
+            logger.error('Command returned error:')
             logger.error('  Command: {}'.format(cmd))
             logger.error('  Return code: {}'.format(e.returncode))
         raise e
