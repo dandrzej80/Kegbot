@@ -10,5 +10,5 @@ sudo bash basic-setup.sh
 
 #Install KegBot and Dependencies
 cd ..
-sudo bash -c install.sh
+bash -c install.sh
 #bash -c "$(curl -fsSL https://raw.github.com/Kegbot/kegberry/master/install.sh)"
