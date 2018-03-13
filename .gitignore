@@ -1,6 +1,0 @@
-*.egg-info
-*.DS_Store
-*.pyc
-dist/
-CHANGELOG.html
-README.html
