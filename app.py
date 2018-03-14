@@ -59,7 +59,7 @@ gflags.DEFINE_boolean('upgrade_system_packages', False,
 gflags.DEFINE_string('kegbot_server_package', 'kegbot==1.2.3',
     '(Advanced use only.) Version of Kegbot Server to install.')
 
-gflags.DEFINE_string('kegbot_pycore_package', 'kegbot-pycore2==1.2.1',
+gflags.DEFINE_string('kegbot_pycore_package', 'kegbot-pycore2==1.2.2',
     '(Advanced use only.) Version of Kegbot Pycore to install.')
 
 gflags.DEFINE_boolean('fake', False,
