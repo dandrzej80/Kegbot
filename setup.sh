@@ -21,5 +21,7 @@ sudo apt-get install python3-dev
 sudo pip install -U virtualenv
 sudo pip install -U --pre kegberry
 sudo cp /home/pi/Kegbot/app.py /usr/local/lib/python2.7/dist-packages/kegberry/app.py
+mysqladmin -u root create kegbot
+mysql -r root -e 'GRANT ALL PRIVILEGES ON kegbot.* TO kegbot@localhost IDENTIFIED BY ""; flush privileges;'
 export INSTALLFLAGS="--allow_root"
-sudo kegberry $INSTALLFLAGS install
+kegberry $INSTALLFLAGS install
