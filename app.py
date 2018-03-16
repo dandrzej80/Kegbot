@@ -50,7 +50,7 @@ gflags.DEFINE_string('mysql_database', 'kegbot',
 gflags.DEFINE_string('mysql_user', 'root',
     'User for the MySQL server.')
 
-gflags.DEFINE_string('mysql_password', '',
+gflags.DEFINE_string('mysql_password', '1234',
     'Password for the MySQL user, if any.')
 
 gflags.DEFINE_boolean('upgrade_system_packages', False,
@@ -285,12 +285,12 @@ class KegberryApp(object):
             run_in_virtualenv(PYCORE_VENV, 'pip install {}'.format(FLAGS.kegbot_pycore_package))
 
         logger.info('Installing Kegbot ...')
-        cmd = 'setup-kegbot.py --interactive=true')
-#        cmd = 'setup-kegbot.py --interactive=false --db_type=mysql --db_database="{}"'.format(FLAGS.mysql_database)
-#        data_root = os.path.join(FLAGS.kegbot_home, 'kegbot-data')
-#        cmd += ' --data_root={}'.format(data_root)
-#        if FLAGS.mysql_password:
-#            cmd += ' --db_password="{}"'.format(FLAGS.mysql_password)
+        cmd = 'setup-kegbot.py --interactive=true'
+        cmd = 'setup-kegbot.py --interactive=false --db_type=mysql --db_database="{}"'.format(FLAGS.mysql_database)
+        data_root = os.path.join(FLAGS.kegbot_home, 'kegbot-data')
+        cmd += ' --data_root={}'.format(data_root)
+        if FLAGS.mysql_password:
+            cmd += ' --db_password="{}"'.format(FLAGS.mysql_password)
         run_in_virtualenv(SERVER_VENV, cmd)
 
         logger.info('Generating API key ...')
