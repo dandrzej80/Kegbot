@@ -285,7 +285,7 @@ class KegberryApp(object):
             run_in_virtualenv(PYCORE_VENV, 'pip install {}'.format(FLAGS.kegbot_pycore_package))
 
         logger.info('Installing Kegbot ...')
-        cmd = 'setup-kegbot.py --interactive=true'
+#        cmd = 'setup-kegbot.py --interactive=true'
         cmd = 'setup-kegbot.py --interactive=false --db_type=mysql --db_database="{}"'.format(FLAGS.mysql_database)
         data_root = os.path.join(FLAGS.kegbot_home, 'kegbot-data')
         cmd += ' --data_root={}'.format(data_root)
