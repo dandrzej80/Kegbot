@@ -155,7 +155,7 @@ def run_in_virtualenv(venv, cmd, **kwargs):
 
 
 def run_mysql(subcommand, command='mysql', **kwargs):
-    cmd = '{} -u {} '.format(command, FLAGS.mysql_user)
+    cmd = 'sudo {} -u {} '.format(command, FLAGS.mysql_user)
     if FLAGS.mysql_password:
         cmd += '-p="{}" '.format(FLAGS.mysql_password)
     cmd += subcommand
