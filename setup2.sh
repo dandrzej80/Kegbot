@@ -24,3 +24,9 @@ sudo bash -c "DEBIAN_FRONTED=noninteractive apt-get -yq clean"
 sudo mysql -u root -p="1234" -e "create database kegbot"
 mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root -p=1234 mysql
 sudo useradd -G dialout -m kegbot
+which virtualenv
+sudo su -l kegbot -c "if [ ! -e /home/kegbot/kegbot-server.venv ]; then /usr/local/bin/virutalenv /home/kegbot/kegbot-server.venv; fi"
+sudo su -l kegbot -c "if [ ! -e /home/kegbot/kegbot-pycore.venv ]; then /usr/local/bin/virutalenv /home/kegbot/kegbot-pycore.venv; fi"
+sudo su -l kegbot -c ". /home/kegbot/kegbot-server.venv/bin/activate && pip install kegbot==1.2.3"
+sudo su -l kegbot -c ". /home/kegbot/kegbot-pycore.venv/bin/activate && pip install kegbot-pycore2==1.2.3"
+#sudo su -l kegbot -c ". /home/kegbot/kegbot-server.venv/bin/activate && setup-kegbot.py"
