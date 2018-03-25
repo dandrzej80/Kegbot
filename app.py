@@ -50,7 +50,7 @@ gflags.DEFINE_string('mysql_database', 'kegbot',
 gflags.DEFINE_string('mysql_user', 'root',
     'User for the MySQL server.')
 
-gflags.DEFINE_string('mysql_password', 'YES',
+gflags.DEFINE_string('mysql_password', '',
     'Password for the MySQL user, if any.')
 
 gflags.DEFINE_boolean('upgrade_system_packages', False,

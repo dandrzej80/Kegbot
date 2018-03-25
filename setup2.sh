@@ -21,10 +21,10 @@ sudo bash -c "DEBIAN_FRONTED=noninteractive apt-get -yq update"
 sudo bash -c "DEBIAN_FRONTED=noninteractive apt-get -yq upgrade"
 sudo bash -c "DEBIAN_FRONTED=noninteractive apt-get -yq install build-essential nginx-light libjpeg-dev supervisor python-setuptools python-dev default-libmysqlclient-dev mysql-server redis-server"
 sudo bash -c "DEBIAN_FRONTED=noninteractive apt-get -yq clean"
-sudo mysql -u root -e "use mysql; update user set plugin='mysql_native_password' where user='root'; flush privileges; exit;"
-sudo service mysql restart
-sudo mysql -u root -p="YES" -e "create database kegbot"
-sudo mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root -p="YES" mysql
+#sudo mysql -u root -e "use mysql; update user set plugin='mysql_native_password' where user='root'; flush privileges; exit;"
+#sudo service mysql restart
+sudo mysql -u root -e "create database kegbot"
+sudo mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql
 sudo useradd -G dialout -m kegbot
 which virtualenv
 sudo su -l kegbot -c "if [ ! -e /home/kegbot/kegbot-server.venv ]; then /usr/local/bin/virtualenv /home/kegbot/kegbot-server.venv; fi"
