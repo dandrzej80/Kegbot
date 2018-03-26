@@ -21,6 +21,7 @@ sudo bash -c "DEBIAN_FRONTED=noninteractive apt-get -yq update"
 sudo bash -c "DEBIAN_FRONTED=noninteractive apt-get -yq upgrade"
 sudo bash -c "DEBIAN_FRONTED=noninteractive apt-get -yq install build-essential nginx-light libjpeg-dev supervisor python-setuptools python-dev default-libmysqlclient-dev mysql-server redis-server"
 sudo bash -c "DEBIAN_FRONTED=noninteractive apt-get -yq clean"
+sudo useradd -G dialout -m kegbot
 which virtualenv
 sudo su -l kegbot -c "if [ ! -e /home/kegbot/kegbot-server.venv ]; then /usr/local/bin/virtualenv /home/kegbot/kegbot-server.venv; fi"
 sudo su -l kegbot -c "if [ ! -e /home/kegbot/kegbot-pycore.venv ]; then /usr/local/bin/virtualenv /home/kegbot/kegbot-pycore.venv; fi"
@@ -28,6 +29,6 @@ sudo su -l kegbot -c ". /home/kegbot/kegbot-server.venv/bin/activate && pip inst
 sudo su -l kegbot -c ". /home/kegbot/kegbot-pycore.venv/bin/activate && pip install kegbot-pycore2==1.2.3"
 sudo mysql -u root -e "create database kegbot"
 sudo mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql
-sudo mysql -u root -e 'GRANT ALL PRIVILEGES ON kegbot.* TO kegbot@localhost IDENTIFIED BY ""; flush privileges;'
-#sudo useradd -G dialout -m kegbot
+sudo mysql -u root -e 'CREATE USER kegbot@localhost IDENTIFIED BY ""; GRANT ALL PRIVILEGES ON kegbot.* TO kegbot@localhost IDENTIFIED BY ""; flush privileges;'
+sudo service mysql restart
 #sudo su -l kegbot -c ". /home/kegbot/kegbot-server.venv/bin/activate && setup-kegbot.py"
