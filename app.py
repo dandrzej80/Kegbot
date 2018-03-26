@@ -99,7 +99,7 @@ REQUIRED_PACKAGES = (
     'supervisor',
     'python-setuptools',
     'python-dev',
-    'default-libmysqlclient-dev',
+    'libmysqlclient-dev',
     'mysql-server',
     'redis-server',
 )
