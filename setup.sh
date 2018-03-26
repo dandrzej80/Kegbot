@@ -19,3 +19,4 @@ sudo pip install -U --pre kegberry
 sudo cp /home/pi/Kegbot/app.py /usr/local/lib/python2.7/dist-packages/kegberry/app.py
 export INSTALLFLAGS="--allow_root"
 kegberry $INSTALLFLAGS install
+sudo cp /home/pi/Kegbot/local_settings.py /home/kegbot/.kegbot/local_settings.py

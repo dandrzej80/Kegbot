@@ -3,7 +3,7 @@
 # Safe to edit by hand. See http://kegbot.org/docs/server/ for more info.
 
 # NEVER set DEBUG to `True` in production.
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {'default': {'ENGINE': 'django.db.backends.mysql', 'NAME': 'kegbot', 'HOST': '', 'USER': 'root', 'PASSWORD': '', 'OPTIONS': {'init_command': 'SET storage_engine=INNODB'}}}
@@ -16,3 +16,18 @@ STATIC_ROOT = '/home/kegbot/kegbot-data/static'
 
 SECRET_KEY = 'tu&o2wwdax!30gq2_^y9t#s#+7d*g1568inhh+a&fp-e%3#hf8'
 
+#Tell Kegbot use the SMTP e-mail backend.
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+#SMTP server hostname (default: 'localhost') and port (default: 25)
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+
+#Credentials for SMTP Server
+EMAIL_HOST_USER = 'dandrzej80@gmail.com'
+EMAIL_HOST_USER = 'Dka638Arden'
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = False
+
+#"From" address for emails
+EMAIL_FROM_ADDRESS = 'dandrzej80@gmail.com'
